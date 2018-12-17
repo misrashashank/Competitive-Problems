@@ -4,7 +4,7 @@
 # of socks that are available.
 
 
-def sockMerchant(num, op_array):
+def sock_merchant(num, op_array):
     pairs = {}
     count = 0
     for item in op_array:
@@ -18,4 +18,4 @@ def sockMerchant(num, op_array):
 
 
 if __name__ == '__main__':
-    sockMerchant(10, [1, 2, 3, 1, 3, 2, 2, 1, 2, 3])
+    sock_merchant(10, [1, 2, 3, 1, 3, 2, 2, 1, 2, 3])
