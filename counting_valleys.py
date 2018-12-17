@@ -9,7 +9,7 @@
 # starting with a step down from sea level and end with a step up to sea level.
 
 
-def countingValleys(num, seq):
+def counting_valleys(num, seq):
     up = down = valley = 0
     trek = []
     for item in list(seq):
@@ -30,4 +30,4 @@ def countingValleys(num, seq):
 
 
 if __name__ == '__main__':
-    countingValleys(8, "UDDDUDUU")
+    counting_valleys(8, "UDDDUDUU")
