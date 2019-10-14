@@ -15,7 +15,7 @@ Output: [4, 9, 9, 49, 121]
 
 
 class Solution:
-    def sortedSquares(self, A):
+    def sorted_squares(self, A):
         """
         :type A: List[int]
         :rtype: List[int]

@@ -9,3 +9,11 @@ def maximum_toys(prices, k):
 
 
 maximum_toys([1, 12, 5, 111, 200, 1000, 10], 50)
+
+"""
+sadsadada
+
+"""
+
+if __name__ == '__main__':
+	main()

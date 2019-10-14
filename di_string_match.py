@@ -23,7 +23,7 @@ S only contains characters "I" or "D".
 
 
 class Solution:
-    def diStringMatch(self, S):
+    def di_string_match(self, S):
         """
         :type S: str
         :rtype: List[int]

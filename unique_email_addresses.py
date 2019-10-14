@@ -23,7 +23,7 @@ Explanation: "testemail@leetcode.com" and "testemail@lee.tcode.com" actually rec
 
 
 class Solution:
-    def numUniqueEmails(self, emails):
+    def num_unique_emails(self, emails):
         """
         :type emails: List[str]
         :rtype: int

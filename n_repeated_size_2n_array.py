@@ -23,7 +23,7 @@ A.length is even
 import collections
 
 class Solution:
-    def repeatedNTimes(self, A):
+    def repeated_n_times(self, A):
         """
         :type A: List[int]
         :rtype: int
