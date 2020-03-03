@@ -18,9 +18,8 @@ S and J will consist of letters and have length at most 50.
 The characters in J are distinct.
 """
 
-import collections
-
-
+'''
+# METHOD 1
 class Solution:
     def num_jewels_in_stones(self, J, S):
         """
@@ -40,4 +39,15 @@ class Solution:
         for item in J:
             if item in dict_S.keys():
                 count += dict_S[item]
+        return count
+'''
+
+# METHOD 2
+class Solution:
+    def numJewelsInStones(self, J: str, S: str) -> int:
+        J_list = list(J)
+        count = 0
+        for item in S:
+            if item in J_list:
+                count += 1
         return count
