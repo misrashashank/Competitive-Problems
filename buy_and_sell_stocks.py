@@ -39,7 +39,7 @@ class Solution:
                     max_profit = profit
         return max_profit
         '''
-
+        '''
         # Time: O(n)
         num_days = len(prices)
         min_cost = sys.maxsize
@@ -49,4 +49,16 @@ class Solution:
                 min_cost = prices[day]
             elif (prices[day] - min_cost) > max_profit:
                 max_profit = prices[day] - min_cost
+        return max_profit
+        '''
+        if not prices:
+            return 0
+        
+        min_cost = float('inf')
+        max_profit = 0
+        for num in prices:
+            if num < min_cost:
+                min_cost = num
+            min_cost = min(num, min_cost)
+            max_profit = max((num - min_cost), max_profit)
         return max_profit
