@@ -25,7 +25,7 @@ the number of edges between them.
 
 
 class Solution:
-    def diameterOfBinaryTree(self, root: TreeNode) -> int:
+    def diameterOfBinaryTree(self, root):
         self.diameter = 0
         self.module(root)
         return self.diameter
