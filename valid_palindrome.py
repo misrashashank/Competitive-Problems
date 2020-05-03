@@ -17,10 +17,12 @@ Output: false
 
 class Solution:
     def isPalindrome(self, s):
-        if not s:
-            return True
-
-        ind_chars = [ele.lower() for ele in s if ele.isalnum()]
-        s_original = "".join(ind_chars)
-        s_reverse = s_original[::-1]
-        return s_original == s_reverse
+        '''
+        str > Bool
+        "race a car" > False
+        "" > True
+        
+        Remove spaces and special chars, make lower > check reverse of string
+        '''
+        updated_str = [item.lower() for item in s if item.isalnum()]
+        return updated_str == updated_str[::-1]
