@@ -48,3 +48,56 @@ class Solution:
         # Return the node from the point where the merged nodes start
         # We can't use l3, as l3 is at present at the end of the sorted list
         return new_head.next
+
+
+# Another solution
+'''
+class Solution:
+    def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
+        '''
+        LL1, LL2 > LL4
+        Sorted linked lists
+        
+        1->2->4, 1->3->4 > 1->1->2->3->4->4
+        1->2->4, 1 > 1->1->2->4
+        1, 1 > 1->1
+        1,  > 1
+         , > None
+        
+        Two pointers on each LL > Compare value > Create new ListNode
+        Maintain condition that either of the lists is present
+        
+        Return dummynode->1->1->2
+        
+        Time: O(n)
+        Space: O(1)
+        '''
+        
+        if not l1:
+            return l2
+        if not l2:
+            return l1
+        if not l1 and not l2:
+            return None
+        
+        root = ListNode(0)
+        head = root
+        
+        while(l1 and l2):
+            if l1.val < l2.val:
+                head.next = ListNode(l1.val)
+                l1 = l1.next
+            else:
+                head.next = ListNode(l2.val)
+                l2 = l2.next
+            head = head.next
+        if l1:
+            remainder = l1
+        else:
+            remainder = l2
+        while(remainder):
+            head.next = ListNode(remainder.val)
+            remainder = remainder.next
+            head = head.next
+        return root.next
+'''
