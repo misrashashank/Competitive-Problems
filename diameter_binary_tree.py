@@ -38,3 +38,38 @@ class Solution:
 
         self.diameter = max(left + right, self.diameter)
         return max(left, right) + 1
+
+# Solution 2
+'''
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution:
+    def diameterOfBinaryTree(self, root: TreeNode) -> int:
+        '''
+        TreeNode > Integer
+        
+        Some tree > 3
+        Recursive
+        For each node, calculate left and right heights
+        Also, recursively keep updating max_diameter at each node (left + right)
+        '''
+        self.max_diameter = 0
+        self.get_max_diameter(root)
+        return self.max_diameter
+        
+    def get_max_diameter(self, node):
+        if not node:
+            return 0
+
+        left = self.get_max_diameter(node.left)
+        right = self.get_max_diameter(node.right)
+
+        self.max_diameter = max(self.max_diameter, left+right)
+
+        return max(left, right) + 1
+'''
