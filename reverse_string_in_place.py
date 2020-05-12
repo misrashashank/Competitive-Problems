@@ -22,15 +22,28 @@ class Solution:
         """
         Do not return anything, modify s in-place instead.
         """
-
+        # Method 1        
         '''
-        # Method 1
         s[:] = s[::-1]
         '''
-
+        
         # Method 2
+        '''
         start, end = 0, len(s) - 1
         while (start < end):
             s[start], s[end] = s[end], s[start]
             start += 1
-            end -= 1
+            end -= 1       
+        '''
+
+        # Method 3 - Recursion
+        self.helper(s, 0, len(s)-1)
+        
+    def helper(self, s, start, end):
+        if start >= end:
+            return
+
+        s[start], s[end] = s[end], s[start]
+        start += 1
+        end -= 1
+        self.helper(s, start, end)
